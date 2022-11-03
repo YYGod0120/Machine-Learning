@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+'''
+散点图的绘画
+'''
 #创建一些数据
 score = np.random.randint(0,100,(10,6))
 score_df = pd.DataFrame(score) #数据结构
@@ -12,14 +15,20 @@ plt.figure(figsize=(20,20),dpi=100)
 #获取你需要的数据
 colors = ['red','gray','pink','blue','green','black','orange','purple','#ccc',"#33cccc"]
 x = [i0 for i0 in range(1,11)]
-y = []
+y = [[],[],[],[],[],[]]
+num = 0
 for a in range(0,6):
     for b in range(0,10):
-        y.append(score[b,a])
-    plt.legend(f"同学")
-    plt.scatter(x,y,color=colors[b],marker='.')
-    y = []
+        y[a].append(score[b,a])
+
+#绘图
+for ele in range(0,6):
+
+    plt.scatter(x,y[ele],s=100,c=colors[ele],marker='.')
+
 plt.show()
+
+
 
 
 
