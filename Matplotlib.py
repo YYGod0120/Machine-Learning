@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 '''
 散点图的绘画
+
 '''
 #创建一些数据
 score = np.random.randint(0,100,(10,6))
